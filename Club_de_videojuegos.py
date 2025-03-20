@@ -20,3 +20,31 @@ while True:
         vid=input(f"Ingrese su videojuego favorito: ")
         gamec.append(vid)
         print(f"¡Miembro agregado exitosamente!{Style.RESET_ALL}")
+     if (opc == 2):
+        nombre=input(f"{Fore.MAGENTA}Dame el nombre del miembro para darlo de baja: ")
+        if (nombre in nombrec):
+            ind=nombrec.index(nombre)
+            nombrec.pop(ind)
+            gamertag.pop(ind)
+            edadc.pop(ind)
+            gamec.pop(ind)
+            print("la base de datos del club actualizada ",nombrec,gamertag,edadc,gamec)
+        else:
+            print(f"",nombre, " no esta en la lista{Style.RESET_ALL}")
+    if (opc == 3):
+        nombre=input(f"{Fore.BLUE}Dame el nombre del miembro para cambiar sus datos: ")
+        if (nombre in nombrec):
+            ind=nombrec.index(nombre)
+            print(f"1.- Cambiar su gamertag")
+            print("2.- Cambiar su videojuego favorito")
+            opc2 = int(input("Elige la opción a realizar: "))
+            if opc2 == 1:
+                new = input("Dame el nuevo gamertag: ")
+                gamertag[ind] = new
+            if opc2 == 2:
+                new = input("Dame el nuevo videojuego favorito: ")
+                gamec[ind] = new
+            else:
+                print(f"{Fore.BLUE}Opción inválida.{Style.RESET_ALL}")
+        else:
+            print(f"{Fore.BLUE}Opción inválida.{Style.RESET_ALL}")
