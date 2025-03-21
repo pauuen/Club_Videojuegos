@@ -20,7 +20,7 @@ while True:
         vid=input(f"Ingrese su videojuego favorito: ")
         gamec.append(vid)
         print(f"¡Miembro agregado exitosamente!{Style.RESET_ALL}")
-     if (opc == 2):
+    if (opc == 2):
         nombre=input(f"{Fore.MAGENTA}Dame el nombre del miembro para darlo de baja: ")
         if (nombre in nombrec):
             ind=nombrec.index(nombre)
@@ -47,4 +47,16 @@ while True:
             else:
                 print(f"{Fore.BLUE}Opción inválida.{Style.RESET_ALL}")
         else:
-            print(f"{Fore.BLUE}Opción inválida.{Style.RESET_ALL}")
+            print(f"{Fore.BLUE}Opción inválida.{Style.RESET_ALL}")        
+    if (opc == 4):
+        nombre=input(f"{Fore.CYAN}Dame el nombre del miembro para obtener sus datos:")
+        if nombre in nombrec:
+            ind=nombrec.index(nombre)
+            print(f"Su gamertag es: {gamertag[ind]}")
+            print(f"Su edad es: {edadc[ind]}")
+            print(f"Su videojuego favorito es: {gamec[ind]}")
+        else:
+            print(f"El usuario no se encuentra{Style.RESET_ALL}")
+    if (opc == 5):
+        print(f"{Fore.RED}¡Gracias por venir vuelva pronto!{Style.RESET_ALL}")
+        break
